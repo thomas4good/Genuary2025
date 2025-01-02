@@ -1,17 +1,17 @@
-let numLayers = 100; // Total number of contour layers
-let visibleLayers = 0; // Counter for layers currently visible
-let noiseScale = 0.1; // Controls the irregularity of the shapes
-let offset = 0; // Animation offset
-let revealSpeed = 15; // Frames per layer reveal
-let layerData = []; // Stores position, color, and size for each layer
-let palette = []; // Color palette
+let numLayers = 100; 
+let visibleLayers = 0; 
+let noiseScale = 0.1; 
+let offset = 0;
+let revealSpeed = 15; 
+let layerData = []; 
+let palette = []; 
 
 function setup() {
   createCanvas(800, 800);
   frameRate(30);
   noStroke();
 
-  // Define the palette
+  // color palette
   palette = [
     color('#0A2463'),
     color('#FB3640'),
@@ -20,7 +20,7 @@ function setup() {
     color('#E2E2E2'),
   ];
 
-  // Initialize layer data
+  //layer data
   for (let i = 0; i < numLayers; i++) {
     layerData.push({
       x: random(width),
@@ -34,7 +34,7 @@ function setup() {
 function draw() {
   background(20, 20, 30);
 
-  // Draw visible layers
+  // Draw  layers
   for (let i = 0; i < visibleLayers; i++) {
     let layer = layerData[i];
     let layerOffset = offset;
